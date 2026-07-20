@@ -49,4 +49,13 @@ export const GlobalStyled = createGlobalStyle`
         text-decoration: none;
         color: inherit;
       }
+        body{
+            padding-top: 100px
+        }
+        
+    main{
+        font-family: "Cormorant Garamond", serif;
+        font-optical-sizing: auto;
+        min-height: calc(100vh - 180px);
+    }
 `

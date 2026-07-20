@@ -3,12 +3,12 @@ import styled from "styled-components";
 export default function HeaderComponent() {
   return (
     <HeaderStyled>
-      <a href="/" >My Gallery</a>
+      <a href="/" >MY GALLERY</a>
 
       <ContainerStyled>
-        <a href="/gallery">Gallery</a>
-        <a href="/about">About</a>
-        <a href="/contact">Contact</a>
+        <a href="/gallery">GALLERY</a>
+        <a href="/about">ABOUT</a>
+        <a href="/contact">CONTACT</a>
       </ContainerStyled>
     </HeaderStyled>
   );
@@ -16,8 +16,11 @@ export default function HeaderComponent() {
 
 const HeaderStyled = styled.header`
   background-color: #f1f1f1;   
+  user-select: none;
   
-  font-family: Arial, sans-serif;
+  font-family: "Datatype", monospace;
+  font-optical-sizing: auto;
+  font-weight: 400;  
   font-size: 18px;
  
   height: 80px;
@@ -44,5 +47,9 @@ const ContainerStyled = styled.div`
   a:hover{
     color: #818181;
     border-bottom: 2px solid #818181;
+  }
+  a:active {
+    color:  #f1f1f1;  
+    border-bottom: 2px solid #f1f1f1;;
   }
 `
