@@ -1,4 +1,5 @@
 import { createGlobalStyle } from 'styled-components';
+import bgImage from './assets/paper-texture-bg.jpg'
 
 
 export const GlobalStyled = createGlobalStyle`
@@ -50,12 +51,15 @@ export const GlobalStyled = createGlobalStyle`
         color: inherit;
       }
         body{
-            padding-top: 100px
+            
         }
         
     main{
-        font-family: "Cormorant Garamond", serif;
-        font-optical-sizing: auto;
-        min-height: calc(100vh - 180px);
+        font-family: "Cormorant Garamond", serif;    
+        min-height:100vh;
+        background-image: url(${bgImage});
+        background-size: contain;
+        background-position: center;
+        repeat: repeat;
     }
 `

@@ -3,7 +3,7 @@ import styled from "styled-components";
 export default function HeaderComponent() {
   return (
     <HeaderStyled>
-      <a href="/" >MY GALLERY</a>
+      <a href="/" >ARTHUR WORKS</a>
 
       <ContainerStyled>
         <a href="/gallery">GALLERY</a>
@@ -15,16 +15,17 @@ export default function HeaderComponent() {
 }
 
 const HeaderStyled = styled.header`
-  background-color: #f1f1f1;   
+  //background-color: #f1f1f1;   
+  background-color: transparent;
   user-select: none;
   
   font-family: "Datatype", monospace;
   font-optical-sizing: auto;
   font-weight: 400;  
-  font-size: 18px;
+  font-size: 19px;
  
-  height: 80px;
-  padding: 0 20px;
+  height: 60px;
+  padding: 0 40px;
   position: fixed;
   top: 0;
   left: 0;
@@ -34,6 +35,7 @@ const HeaderStyled = styled.header`
   display: flex;
   justify-content: space-between; 
   align-items: center;
+  color: #2f2f2f;
 `
 
 const ContainerStyled = styled.div`
@@ -42,14 +44,16 @@ const ContainerStyled = styled.div`
 
   a{
     border: 2px solid transparent;
+    transition: .25s;
   }
+  
 
   a:hover{
     color: #818181;
     border-bottom: 2px solid #818181;
   }
   a:active {
-    color:  #f1f1f1;  
-    border-bottom: 2px solid #f1f1f1;;
+    color:  #b3b3b3;  
+    border-bottom: 2px solid #b3b3b3;;
   }
 `

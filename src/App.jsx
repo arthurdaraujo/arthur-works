@@ -2,6 +2,10 @@ import {GlobalStyled} from './GlobalStyled.jsx'
 import FooterComponent from './components/footer/FooterComponent.jsx'
 import HeaderComponent from './components/header/HeaderComponent.jsx'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import HomePage from './Pages/HomePage.jsx'
+import GalleryPage from './Pages/GalleryPage.jsx'
+import AboutPage from './Pages/AboutPage.jsx'
+import ContactPage from './Pages/ContactPage.jsx'
 
 
 function App() {
@@ -12,12 +16,12 @@ function App() {
       <GlobalStyled />
       <HeaderComponent />
       <Routes>
-        <Route path="/" element={<h1>Home</h1>} />
-        <Route path="/gallery" element={<h1>Gallery</h1>} />
-        <Route path="/about" element={<h1>About</h1>} />
-        <Route path="/contact" element={<h1>Contact</h1>} />
+        <Route path="/" element={<HomePage />} />
+        <Route path="/gallery" element={<GalleryPage />} />
+        <Route path="/about" element={<AboutPage />} />
+        <Route path="/contact" element={<ContactPage />} />
       </Routes>
-      <main></main>
+     
 
       <FooterComponent/>
       
