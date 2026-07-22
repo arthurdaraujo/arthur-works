@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import bgImage from "../../assets/paper-texture-header.png"
 
 export default function HeaderComponent() {
   return (
@@ -36,6 +37,11 @@ const HeaderStyled = styled.header`
   justify-content: space-between; 
   align-items: center;
   color: #2f2f2f;
+  background-image: url(${bgImage});
+  //border-bottom:1px solid rgba(0,0,0,.05);
+  backdrop-filter: blur(10px);
+
+  -webkit-backdrop-filter: blur(10px);
 `
 
 const ContainerStyled = styled.div`
