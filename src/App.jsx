@@ -1,4 +1,4 @@
-import {GlobalStyled} from './GlobalStyled.jsx'
+import {GlobalStyled} from './styles/GlobalStyled.jsx'
 import FooterComponent from './components/footer/FooterComponent.jsx'
 import HeaderComponent from './components/header/HeaderComponent.jsx'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'

@@ -1,16 +1,19 @@
 import styled from "styled-components";
 import bgImage from "../../assets/paper-texture-header.png"
+import HamburguerMenuComponent from "../menu/HamburguerMenuComponent";
 
 export default function HeaderComponent() {
   return (
     <HeaderStyled>
       <a href="/" >ARTHUR WORKS</a>
 
-      <ContainerStyled>
+      <NavStyled>
         <a href="/gallery">GALLERY</a>
         <a href="/about">ABOUT</a>
         <a href="/contact">CONTACT</a>
-      </ContainerStyled>
+      </NavStyled>
+
+      <HamburguerMenuComponent/>
     </HeaderStyled>
   );
 }
@@ -42,11 +45,19 @@ const HeaderStyled = styled.header`
   backdrop-filter: blur(10px);
 
   -webkit-backdrop-filter: blur(10px);
+
+  @media (max-width: 600px) {
+    //background-color: red;
+  }
 `
 
-const ContainerStyled = styled.div`
+const NavStyled = styled.nav`
   display: flex;
   gap: 20px;
+
+  @media (max-width: 600px) {
+    display: none;
+  }
 
   a{
     border: 2px solid transparent;
