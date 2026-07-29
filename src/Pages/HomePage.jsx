@@ -1,5 +1,5 @@
 import Styled from "styled-components";
-import image1Large from "../assets/drawings/1large.png";
+import image1Large from "../assets/drawings/1large2.png";
 import image1Medium from "../assets/drawings/1medium.png";
 import image1Small from "../assets/drawings/1small.png";
 
@@ -157,7 +157,7 @@ const ImgContainerStyled = Styled.div`
         object-position: 78% center;
 
         transform: scale(1.34);
-        transform-origin: right center;
+        transform-origin: right 220px;
 
         display: block;
     }
