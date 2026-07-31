@@ -1,6 +1,8 @@
-import Styled from 'styled-components';
+import Styled from "styled-components";
+import illustrations from "../mock.js";
 
 export default function GalleryPage() {
+
     return (
         <MainStyled>
             <H1Styled>
@@ -9,91 +11,104 @@ export default function GalleryPage() {
 
             <nav>
                 <button>ALL</button>
-
-                <button>CARACTER DESIGN</button>
-
+                <button>CHARACTER DESIGN</button>
                 <button>SCIENTIFIC</button>
-
                 <button>FANTASY</button>
-
                 <button>FAN ART</button>
             </nav>
 
-            <SectionStyled> 
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
+            <SectionStyled>
+                {illustrations.map(illustration => (
+                        <div key={illustration.id}>
+                            <img src={illustration.image} loading="lazy" alt="" />
+                        </div>
+                    ))
+                }             
             </SectionStyled>
-            
+
         </MainStyled>
-    )
+    );
 }
 
 const MainStyled = Styled.main`
-    //border: 1px solid red;
     display: flex;
-    //align-items: center;
-    //justify-content: space-evenly;
     flex-direction: column;
     gap: 10px;
     padding: 0 40px;
 
-
     nav{
-        //border: 1px solid green;    
         display: flex;
+        flex-wrap: wrap;
         gap: 15px;
-
 
         button{
             background: transparent;
-            //padding: 0px 0px;
-            border: 2px solid transparent;
+            border:none;
+            border-bottom: 2px solid transparent;
             cursor: pointer;
             transition: .25s;
-
             font-family: "Datatype", monospace;
-            font-optical-sizing: auto;
-            font-weight: 400;  
-            font-size: 17px;
+            font-size:17px;
             color: #111;
 
             &:hover{
                 color: #818181;
-                border-bottom: 2px solid #818181;
+                border-bottom-color: #818181;
             }
-            &:active {
-                color:  #b3b3b3;  
-                border-bottom: 2px solid #b3b3b3;;
+
+            &:active{
+                color: #B3B3B3;
+                border-bottom-color: #B3B3B3;
             }
         }
     }
-`
+
+    @media(max-width:600px){
+        padding: 0 20px;
+    }
+`;
 
 const H1Styled = Styled.h1`
-    margin: 100px 0 30px 0;
-    font-size: 38px;
-    font-weight: 500;       
-`
+    margin: 100px 0 30px;
+    font-size:38px;
+    font-weight:500;
+`;
 
 const SectionStyled = Styled.section`
-    //border: 1px solid red;
-    margin: 20px 0;
-    //display: flex;
-    //flex-wrap: wrap;
-    gap: 20px;
-    display: grid;
-    grid-template-columns: repeat(auto-fit,minmax(320px,1fr));
-    
-    
-    
+
+    margin: 20px 0 40px;
+    columns: 3 340px;
+    column-gap: 20px;
+
     div{
-        //border: 1px solid blue;
-        //width: calc((100% - 40px) / 3);
-        height: 300px;
-        background: #9e9e9e;
+        break-inside: avoid;
+        margin-bottom: 20px;
+        overflow: hidden;
+        cursor: pointer;
+        position: relative;
+
+        &::after{
+            content: "";            
+            position: absolute;
+            inset:0;
+            background:rgba(255, 255, 255, 0.30);
+            opacity:0;
+            transition: opacity .35s ease;
+            pointer-events:none;
+        }
+
+        &:hover::after{
+            opacity:1;
+        }
     }
-`
+
+    img{
+        width:100%;
+        display:block;
+        transition:transform .35s ease;
+    }
+
+    div:hover img{
+        transform:scale(1.03);
+    }
+`;
