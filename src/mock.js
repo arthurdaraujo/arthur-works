@@ -27,7 +27,7 @@ import image25 from "./assets/gallery/2026-1.jpg";
 const illustrations = [
     {
         id: 1,
-        title: "",
+        title: "Wise Eyes",
         year: 2015,
         category: "",
         image: image1,
@@ -35,7 +35,7 @@ const illustrations = [
 
     {
         id: 2,
-        title: "",
+        title: "Mahin",
         year: 2016,
         category: "",
         image: image2
@@ -43,7 +43,7 @@ const illustrations = [
 
     {
         id: 3,
-        title: "",
+        title: "Aquarious",
         year: 2017,
         category: "",
         image: image3
@@ -51,7 +51,7 @@ const illustrations = [
 
     {
         id: 4,
-        title: "",
+        title: "Hemiscyllium",
         year: 2018,
         category: "",
         image: image4
@@ -59,7 +59,7 @@ const illustrations = [
 
     {
         id: 5,
-        title: "",
+        title: "The Veil",
         year: 2018,
         category: "",
         image: image5
@@ -67,7 +67,7 @@ const illustrations = [
 
     {
         id: 6,
-        title: "",
+        title: "Urso Viril Soviético",
         year: 2019,
         category: "",
         image: image6
@@ -75,7 +75,7 @@ const illustrations = [
 
     {
         id: 7,
-        title: "",
+        title: "Joker",
         year: 2020,
         category: "",
         image: image7
@@ -83,7 +83,7 @@ const illustrations = [
 
     {
         id: 8,
-        title: "",
+        title: "Limbo",
         year: 2021,
         category: "",
         image: image8
@@ -91,7 +91,7 @@ const illustrations = [
 
     {
         id: 9,
-        title: "",
+        title: "In Situ",
         year: 2022,
         category: "",
         image: image9
@@ -99,7 +99,7 @@ const illustrations = [
 
     {
         id: 10,
-        title: "",
+        title: "Emily's Car",
         year: 2023,
         category: "",
         image: image10
@@ -107,7 +107,7 @@ const illustrations = [
 
     {
         id: 11,
-        title: "",
+        title: "All Along The Watchtower",
         year: 2023,
         category: "",
         image: image11
@@ -115,7 +115,7 @@ const illustrations = [
 
     {
         id: 12,
-        title: "",
+        title: "Unaware",
         year: 2023,
         category: "",
         image: image12
@@ -123,7 +123,7 @@ const illustrations = [
 
     {
         id: 13,
-        title: "",
+        title: "Cyber Warrior",
         year: 2023,
         category: "",
         image: image13
@@ -131,7 +131,7 @@ const illustrations = [
 
     {
         id: 14,
-        title: "",
+        title: "Jade Warrior",
         year: 2023,
         category: "",
         image: image14
@@ -139,7 +139,7 @@ const illustrations = [
 
     {
         id: 15,
-        title: "",
+        title: "Groovy",
         year: 2023,
         category: "",
         image: image15
@@ -147,7 +147,7 @@ const illustrations = [
 
     {
         id: 16,
-        title: "",
+        title: "Furiosa",
         year: 2023,
         category: "",
         image: image16
@@ -155,7 +155,7 @@ const illustrations = [
 
     {
         id: 17,
-        title: "",
+        title: "Hasta la Vista Cub",
         year: 2023,
         category: "",
         image: image17
@@ -163,7 +163,7 @@ const illustrations = [
 
     {
         id: 18,
-        title: "",
+        title: "O Despertar das Chamas",
         year: 2023,
         category: "",
         image: image18
@@ -171,7 +171,7 @@ const illustrations = [
 
     {
         id: 19,
-        title: "",
+        title: "Time House",
         year: 2023,
         category: "",
         image: image19
@@ -179,7 +179,7 @@ const illustrations = [
 
     {
         id: 20,
-        title: "",
+        title: "Reino II",
         year: 2023,
         category: "",
         image: image20
@@ -187,7 +187,7 @@ const illustrations = [
 
     {
         id: 21,
-        title: "",
+        title: "Marlin",
         year: 2026,
         category: "",
         image: image21
@@ -195,7 +195,7 @@ const illustrations = [
 
     {
         id:22 ,
-        title: "",
+        title: "Harpy Fly Free",
         year: 2026,
         category: "",
         image: image22
@@ -203,7 +203,7 @@ const illustrations = [
 
     {
         id:23 ,
-        title: "",
+        title: "Redemption",
         year: 2026,
         category: "",
         image: image23
@@ -211,7 +211,7 @@ const illustrations = [
 
     {
         id:24 ,
-        title: "",
+        title: "So I Go Over",
         year: 2026,
         category: "",
         image: image24
@@ -219,7 +219,7 @@ const illustrations = [
 
     {
         id: 25,
-        title: "",
+        title: "French angelfish",
         year: 2026,
         category: "",
         image: image25

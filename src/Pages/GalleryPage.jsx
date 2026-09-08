@@ -1,7 +1,9 @@
 import Styled from "styled-components";
 import illustrations from "../mock.js";
+import {useNavigate} from "react-router-dom";
 
 export default function GalleryPage() {
+    const navigate = useNavigate();
 
     return (
         <MainStyled>
@@ -19,7 +21,10 @@ export default function GalleryPage() {
 
             <SectionStyled>
                 {illustrations.map(illustration => (
-                        <div key={illustration.id}>
+                        <div 
+                            key={illustration.id}
+                            onClick={() => navigate(`./${illustration.id}`)}                        
+                        >
                             <img src={illustration.image} loading="lazy" alt="" />
                         </div>
                     ))

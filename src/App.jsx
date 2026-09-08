@@ -6,6 +6,7 @@ import HomePage from './Pages/HomePage.jsx'
 import GalleryPage from './Pages/GalleryPage.jsx'
 import AboutPage from './Pages/AboutPage.jsx'
 import ContactPage from './Pages/ContactPage.jsx'
+import IllustrationPage from './Pages/IllustrationPage.jsx'
 
 
 function App() {
@@ -19,11 +20,13 @@ function App() {
         <Route element={<Layout />}>          
           <Route path="/" element={<HomePage />} />
           <Route path="/gallery" element={<GalleryPage />} />
+          
           <Route path="/about" element={<AboutPage />} />
           <Route path="/contact" element={<ContactPage />} />
         </Route>
 
         <Route path="*" element={<NotFoundPage />} />
+        <Route path="/gallery/:id" element={<IllustrationPage />} />
       </Routes>
 
      
