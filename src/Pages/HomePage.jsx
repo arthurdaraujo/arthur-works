@@ -2,8 +2,13 @@ import Styled from "styled-components";
 import image1Large from "../assets/drawings/1large2.png";
 import image1Medium from "../assets/drawings/1medium.png";
 import image1Small from "../assets/drawings/1small.png";
+import { useState } from "react";
 
 export default function HomePage() {
+    useState(() => {
+        window.scrollTo(0, 0);
+    }, []);
+
     return (
         <HomePageStyled>
             <ArticleStyled>

@@ -10,6 +10,11 @@ export default function ContactPage() {
         message: ""
     })
 
+     useState(() => {
+           window.scrollTo(0, 0);
+     }, []);
+
+
     function handleSubmit(e) {
         e.preventDefault(); 
 

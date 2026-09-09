@@ -1,24 +1,17 @@
 import Styled from "styled-components";
 import illustrations from "../mock.js";
 import {useNavigate} from "react-router-dom";
+import { useState } from "react";
 
 export default function GalleryPage() {
     const navigate = useNavigate();
 
+    useState(() => {
+       window.scrollTo(0, 0);
+    }, [navigate]);
+
     return (
         <MainStyled>
-            <H1Styled>
-                ILLUSTRATIONS
-            </H1Styled>
-
-            <nav>
-                <button>ALL</button>
-                <button>CHARACTER DESIGN</button>
-                <button>SCIENTIFIC</button>
-                <button>FANTASY</button>
-                <button>FAN ART</button>
-            </nav>
-
             <SectionStyled>
                 {illustrations.map(illustration => (
                         <div 
@@ -73,15 +66,9 @@ const MainStyled = Styled.main`
     }
 `;
 
-const H1Styled = Styled.h1`
-    margin: 100px 0 30px;
-    font-size:38px;
-    font-weight:500;
-`;
-
 const SectionStyled = Styled.section`
-
-    margin: 20px 0 40px;
+  
+    margin: 90px 20px 20px 20px;
     columns: 3 340px;
     column-gap: 20px;
 

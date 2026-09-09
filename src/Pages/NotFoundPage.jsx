@@ -39,8 +39,6 @@ const MainStyled = Styled.main`
     height: 100vh;
     padding: 0 50px;
 
-    //background-color: #55ff7a;
-    //border: 1px solid #ff5555;
     overflow: hidden;
     
 

@@ -1,7 +1,12 @@
 import Styled from "styled-components";
 import aboutimage from "../Assets/aboutimage.jpg";
+import { useState } from "react";
 
 export default function AboutPage() {
+     useState(() => {
+           window.scrollTo(0, 0);
+        }, []);
+
     return (
         <MainStyled>
 
