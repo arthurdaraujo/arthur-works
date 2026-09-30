@@ -21,7 +21,7 @@ export default function AboutPage() {
                 <p>
                     <strong>Creating is my way of exploring ideas.</strong>
 
-                    <br /><br />
+                    <br />
                     I enjoy working with different techniques, styles and themes. 
                     Some pieces are based on careful observation, while others come 
                     entirely from imagination. Whether I'm using graphite, ink, watercolor or 
@@ -52,23 +52,34 @@ const MainStyled = Styled.main`
     display: flex;    
     justify-content: center;    
     gap: 40px;
-    padding-top: 80px;
+    //padding-top: 80px;
+    max-height: calc(100vh - 80px);
+    //height: 100%;
+
 
     @media (max-width:1050px){
+        //padding-top: 80px;
+        max-height: initial;
         flex-direction: column-reverse;
+        
         align-items: center;
-        gap: 40px;
-        padding: 80px 40px;
+        //gap: 0px;
+        padding: 10px 40px 80px;
     }
+        //border:1px solid red;
 `;
 
 const ArticleStyled = Styled.article`
-    flex: 1.1;
+    padding-top: 80px;
+   // flex: 1.1;
     max-width: 550px;
     display: flex;
     flex-direction: column;
+
+   // border:1px solid red;
     
-    gap: 25px;
+    gap: 15px;
+    height:100%;
 
     
     span{
@@ -79,31 +90,43 @@ const ArticleStyled = Styled.article`
     }
 
     h1{       
-        font-size: clamp(3rem,5vw,5.8rem);
+        font-size: clamp(3rem,4.8vw,5.6rem);
         font-weight: 500;
         line-height: .75;
     }
 
     p{
         font-size: 1.15rem;
-        line-height: 1.7;
+        line-height: 1.5;
         color: #3b3b3b;
     }
 
     strong{
         display:block;
-        margin-bottom: 10px;
+        //margin-bottom: 5px;
         font-size: 1.45rem;
         font-weight: 500;
         color: #111;
     }
+        
+    @media (max-width:1050px){
+        padding-top: 10px;
+        
+        strong{
+           // margin-bottom: -15px;
+        }
+    }
 `;
 
 const ImageSectionStyled = Styled.section`
+padding-top: 80px;
     display: flex;
     justify-content: center;
-    flex: .9;
+    //flex: .9;
     max-width:450px;
+    height:calc(100vh - 80px);
+
+    //border:2px solid red;
 
     img{
         width: 100%;

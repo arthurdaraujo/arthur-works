@@ -1,7 +1,5 @@
 import Styled from "styled-components";
-import image1Large from "../assets/drawings/1large2.png";
-import image1Medium from "../assets/drawings/1medium.png";
-import image1Small from "../assets/drawings/1small.png";
+import homeImage from "../assets/home-4.png";
 import { useState } from "react";
 
 export default function HomePage() {
@@ -30,48 +28,53 @@ export default function HomePage() {
 
             <ImgContainerStyled>
                 <picture>
-                    <source media="(max-width: 600px)" srcSet={image1Small} />
+                   {/*<source media="(max-width: 600px)" srcSet={image1Small} />
                     <source media="(max-width: 1100px)" srcSet={image1Medium} />
-                    <img src={image1Large} alt="Arthur Works featured illustration" />
+                    <img src={image1Large} alt="Arthur Works featured illustration" />*/}
+                    <img src={homeImage} alt="Arthur Works featured illustration" />
                 </picture>
             </ImgContainerStyled>
         </HomePageStyled>
     );
 }
 
-const HomePageStyled = Styled.main`
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+const HomePageStyled = Styled.main`   
 
-    min-height: calc(100vh - 72px);
-
+    display: grid;
+   
+    grid-template-columns: 1fr 1fr;
+    
     overflow: hidden;
+ 
+    height:100vh;
+
 
     @media (max-width: 900px) {
+        grid-template-columns: 1fr;
+        height: initial;
         flex-direction: column;
         justify-content: center;
         padding-top: 96px;
-        gap: 24px;
     }
 `;
 
 const ArticleStyled = Styled.article`
-    flex: 1;
-    max-width: 560px;
-
-    padding-left: clamp(24px, 7vw, 120px);
-    padding-right: 24px;
+   
+    padding-left: 120px;
 
     display: flex;
     flex-direction: column;
     justify-content: center;
-    gap: 20px;
+  
+    gap: 18px;
 
     z-index: 2;
 
     span{
         font-size: .95rem;
+
+       // border:1px solid blue;
+        //width: fit-content;
         letter-spacing: .28em;
         text-transform: uppercase;
         color: #2E2E2E;
@@ -79,15 +82,17 @@ const ArticleStyled = Styled.article`
     }
 
     h1{
-        font-size: clamp(3.4rem, 6vw, 6.2rem);
+        font-size: clamp(3.4rem, 6.3vw, 6.2rem);
         font-weight: 500;
-        line-height: .95;
+        line-height: .80;
         margin: 0;
+       // border:1px solid blue;
     }
 
     p{
         max-width: 440px;
         font-size: clamp(1rem, 1.2vw, 1.18rem);
+        //border:1px solid blue;
         line-height: 1.8;
         color: #3F3F3F;
         margin: 0;
@@ -113,6 +118,7 @@ const ButtonViewGalleryStyled = Styled.button`
 
     letter-spacing: .08em;
     font-weight: 600;
+    
 
     transition:
         background-color .25s ease,
@@ -135,53 +141,52 @@ const ButtonViewGalleryStyled = Styled.button`
 `;
 
 const ImgContainerStyled = Styled.div`
-    position: relative;
+  
+  
 
-    flex: 1;
+   // clip-path: inset(0 0 0px -50px);
+    
+  
 
-    min-height: 620px;
+    padding-top: 80px;
+    height: calc(100vh - 80px);
 
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
 
-    padding-right: clamp(16px, 3vw, 56px);
+
+   
 
     picture{
-        width: 100%;
-        height: 100%;
-        display: flex;
-        justify-content: flex-end;
+        
+        height: 100vh;
+     
+        //border:1px solid green;
+        
     }
 
     img{
-        width: min(860px, 100%);
-        height: 100%;
-
-        object-fit: cover;
-        object-position: 78% center;
-
-        transform: scale(1.34);
-        transform-origin: right 220px;
-
-        display: block;
+        //width: min(260px, 100%);
+        width:100%;
+         
     }
 
     
 
-    @media (max-width: 1100px) {
-        min-height: 560px;
+   /* @media (max-width: 1100px) {
+       // min-height: 560px;
+       // border:4px solid red;
 
         img{
             transform: scale(1.22);
             object-position: 72% center;
         }
-    }
+    }*/
 
     @media (max-width: 900px) {
         width: 100%;
         min-height: 460px;
         padding-right: 0;
+        padding-top: 30px;
+       // border:4px solid blue;
 
         justify-content: center;
 

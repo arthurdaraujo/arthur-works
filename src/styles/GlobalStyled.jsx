@@ -55,7 +55,7 @@ export const GlobalStyled = createGlobalStyle`
         }
         
     main{
-        font-family: "Cormorant Garamond", serif;    
+        font-family: "v", serif;    
         min-height:100vh;
         background-image: url(${bgImage});
         background-size: contain;

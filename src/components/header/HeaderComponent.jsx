@@ -2,43 +2,61 @@ import styled from "styled-components";
 import { NavLink } from "react-router-dom";
 import bgImage from "../../assets/paper-texture-header.png";
 import HamburguerMenuComponent from "../menu/HamburguerMenuComponent";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 export default function HeaderComponent() {
 
     const [isMenuOpen, setIsMenuOpen] = useState(false);
+    
+    useEffect(() => {
+        const handleResize = () => {
+            if (window.innerWidth > 600) {
+            setIsMenuOpen(false);
+            }
+        };
+
+        window.addEventListener("resize", handleResize);
+
+        return () => {
+            window.removeEventListener("resize", handleResize);
+        };
+    }, []);
 
     return (
-        <HeaderStyled isOpen={isMenuOpen}>
-            <HeaderContentStyled>
+        <>
+            <DivStyled isOpen={isMenuOpen} onClick={() => setIsMenuOpen(false)}></DivStyled>
+            
+            <HeaderStyled isOpen={isMenuOpen}>
+                <HeaderContentStyled>
 
-                <LogoStyled to="/">
-                    Arthur Works
-                </LogoStyled>
+                    <LogoStyled to="/">
+                        Arthur Works
+                    </LogoStyled>
 
-                <NavStyled aria-label="Main navigation">
-                    <NavLink to="/gallery">Gallery</NavLink>
-                    <NavLink to="/about">About</NavLink>
-                    <NavLink to="/contact">Contact</NavLink>
-                </NavStyled>
+                    <NavStyled aria-label="Main navigation">
+                        <NavLink to="/gallery">Gallery</NavLink>
+                        <NavLink to="/about">About</NavLink>
+                        <NavLink to="/contact">Contact</NavLink>
+                    </NavStyled>
 
-                <HamburguerMenuComponent
-                    isOpen={isMenuOpen}
-                    onToggle={() => setIsMenuOpen(prev => !prev)}
-                />
-                
-            </HeaderContentStyled >
+                    <HamburguerMenuComponent
+                        isOpen={isMenuOpen}
+                        onToggle={() => setIsMenuOpen(prev => !prev)}
+                    />
+                    
+                </HeaderContentStyled >
 
-          
-            <SubNavStyled isOpen={isMenuOpen}>
-                
-                <NavLink to="/gallery">Gallery</NavLink>
-                <NavLink to="/about">About</NavLink>
-                <NavLink to="/contact">Contact</NavLink>
-                  
-            </SubNavStyled>          
+            
+                <SubNavStyled isOpen={isMenuOpen}>
+                    
+                    <NavLinksMenuStyled to="/gallery">Gallery</NavLinksMenuStyled>
+                    <NavLinksMenuStyled to="/about">About</NavLinksMenuStyled>
+                    <NavLinksMenuStyled to="/contact">Contact</NavLinksMenuStyled>
+                    
+                </SubNavStyled>          
 
-        </HeaderStyled>
+            </HeaderStyled>
+        </>
     );
 }
 
@@ -111,9 +129,11 @@ const NavStyled = styled.nav`
         display:none;
     }
 
+
     a{
 
         position:relative;
+        
 
         font-size:.95rem;
         letter-spacing:.08em;
@@ -201,4 +221,25 @@ const SubNavStyled = styled.nav`
         
     }
     overflow: hidden;
+
+`
+const NavLinksMenuStyled = styled(NavLink)`
+    
+    //background-color:red;
+    width:100%;
+    text-align:center;
+    
+`
+
+const DivStyled = styled.div`
+    position: fixed;
+    display:${props => props.isOpen ? "initial" : "none" };
+    z-index:999;
+    top:0px;
+    right:0;
+    left:0;
+    bottom:0;
+    background-color: rgba(0, 0, 0, 0.39);
+    backdrop-filter: blur(3px);
+    //transition: all 1s;
 `
