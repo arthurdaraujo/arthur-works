@@ -1,5 +1,7 @@
-import Styled from "styled-components";
+import Styled, { styled } from "styled-components";
 import aboutimage from "../Assets/aboutimage.jpg";
+import { FaInstagram  } from "react-icons/fa";
+import { FaEtsy } from "react-icons/fa";
 import { useState } from "react";
 
 export default function AboutPage() {
@@ -22,15 +24,23 @@ export default function AboutPage() {
                     <strong>Creating is my way of exploring ideas.</strong>
 
                     <br />
-                    I enjoy working with different techniques, styles and themes. 
-                    Some pieces are based on careful observation, while others come 
-                    entirely from imagination. Whether I'm using graphite, ink, watercolor or 
-                    digital painting, I always try to create work with care and attention to detail.
-
+                    I’m an artist who enjoys drawing and exploring different styles, subjects and techniques. I like experimenting with new ideas and letting each project take its own direction.
                     <br /><br />
-                    This portfolio brings together personal projects, 
-                    studies, fan art and finished illustrations. Each 
-                    one represents a different part of my creative process.
+                    This portfolio is a collection of my illustrations, studies
+                    and personal projects. You can find me on:
+
+                    <br /><br/>
+                   
+                    <ContainerLogosStyled>
+                        <a href="https://www.etsy.com/shop/mydrawingartshopping" target="_blank"> <FaEtsyStyled /></a> 
+                        <span aria-hidden="true"></span>                        
+                        <a href="https://www.instagram.com/arthur.de.araujo" target="_blank"> <FaInstagramStyled /></a>                       
+                    </ContainerLogosStyled>
+                    
+                    
+                    
+
+                    
                 </p>
 
             </ArticleStyled>
@@ -122,11 +132,9 @@ const ImageSectionStyled = Styled.section`
 padding-top: 80px;
     display: flex;
     justify-content: center;
-    //flex: .9;
     max-width:450px;
     height:calc(100vh - 80px);
 
-    //border:2px solid red;
 
     img{
         width: 100%;
@@ -147,3 +155,54 @@ padding-top: 80px;
         }
     }
 `;
+
+const ContainerLogosStyled = styled.div`
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:35px;    
+
+    span{
+        width: 1px;
+        height: 50px;
+        background-color: #ccc;
+    }
+
+    a{
+        width:40px;
+        height:40px;
+        display:flex;
+        justify-content:center;
+        align-items:center;
+        //background-color:red;        
+    }
+`
+
+const FaInstagramStyled = styled(FaInstagram)`
+    width:100%;
+    height:100%;
+    color:black;
+
+    &:hover{
+        color:rgb(60,60,60);
+    }
+
+    &:active{
+        color:rgb(118,118,118);
+    }
+`
+
+const FaEtsyStyled = styled(FaEtsy)`
+    width:100%;
+    height:100%;
+    color:black;
+
+    &:hover{
+        color:rgb(60,60,60);
+    }
+
+    &:active{
+        color:rgb(118,118,118);
+    }
+`

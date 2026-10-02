@@ -1,5 +1,5 @@
 import Styled from 'styled-components';
-import {useState} from 'react';
+import { useState, useEffect } from 'react';
 
 export default function ContactPage() {
 
@@ -8,31 +8,37 @@ export default function ContactPage() {
         email: "",
         subject: "",
         message: ""
-    })
+    });
 
-     useState(() => {
-           window.scrollTo(0, 0);
-     }, []);
-
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, []);
 
     function handleSubmit(e) {
-        e.preventDefault(); 
+        e.preventDefault();
 
-        console.log(formData)
-        alert(formData.name)
+        console.log(formData);
+        alert(formData.name);
     }
 
     function buttonDisabled() {
-        if(formData.name === "" || formData.email === "" || formData.subject === "" || formData.message === ""){
-            return true
+        if (
+            formData.name === "" ||
+            formData.email === "" ||
+            formData.subject === "" ||
+            formData.message === ""
+        ) {
+            return true;
         } else {
-            return false
+            return false;
         }
     }
 
     return (
-        <MainStyled>  
+        <MainStyled>
+
             <ArticleStyled>
+
                 <h1>
                     Let's create something together.
                 </h1>
@@ -44,6 +50,7 @@ export default function ContactPage() {
                 <p>
                     Fill out the form below, and I'll get back to you as soon as possible.
                 </p>
+
             </ArticleStyled>
 
             <SectionStyled>
@@ -60,7 +67,12 @@ export default function ContactPage() {
                             type="text"
                             name="name"
                             value={formData.name}
-                            onChange={(e) => setFormData({...formData, name: e.target.value})}
+                            onChange={(e) =>
+                                setFormData({
+                                    ...formData,
+                                    name: e.target.value
+                                })
+                            }
                             placeholder="Your name"
                             required
                         />
@@ -76,7 +88,12 @@ export default function ContactPage() {
                             type="email"
                             name="email"
                             value={formData.email}
-                            onChange={(e) => setFormData({...formData, email: e.target.value})}
+                            onChange={(e) =>
+                                setFormData({
+                                    ...formData,
+                                    email: e.target.value
+                                })
+                            }
                             placeholder="your@email.com"
                             required
                         />
@@ -92,7 +109,12 @@ export default function ContactPage() {
                             type="text"
                             name="subject"
                             value={formData.subject}
-                            onChange={(e) => setFormData({...formData, subject: e.target.value})}
+                            onChange={(e) =>
+                                setFormData({
+                                    ...formData,
+                                    subject: e.target.value
+                                })
+                            }
                             placeholder="Illustration commission"
                         />
                     </div>
@@ -107,49 +129,58 @@ export default function ContactPage() {
                             name="message"
                             rows="8"
                             value={formData.message}
-                            onChange={(e) => setFormData({...formData, message: e.target.value})}
+                            onChange={(e) =>
+                                setFormData({
+                                    ...formData,
+                                    message: e.target.value
+                                })
+                            }
                             placeholder="Tell me about your project..."
                             required
                         />
                     </div>
 
-                    <button type="submit" disabled={buttonDisabled()}>
+                    <button
+                        type="submit"
+                        disabled={buttonDisabled()}
+                    >
                         Send Message
                     </button>
 
                 </FormStyled>
 
+            </SectionStyled>
 
-            </SectionStyled>            
-            
         </MainStyled>
-    )
+    );
 }
 
-const MainStyled = Styled.main`    
-    padding-top: 100px;
-    padding: 100px 50px;
-    display: flex;      
+const MainStyled = Styled.main`
+    padding: 80px 50px 0 50px;
+    box-sizing: border-box;
+    min-height: 100vh;
+    display: flex;
     justify-content: center;
     gap: 40px;
+    margin: 0;
 
     @media (max-width: 900px){
         flex-direction: column-reverse;
         align-items: center;
         padding: 100px 110px;
-    }   
+    }
 
     @media (max-width: 600px){
         padding: 100px 20px;
     }
-`
+`;
 
 const ArticleStyled = Styled.article`
-    //border: 1px solid red;
-    flex: 1;
+    width: 50%;
+    margin: 0;
 
     h1{
-        font-size: clamp(3rem,5vw,5.8rem);
+        font-size: clamp(3rem, 5vw, 5.8rem);
         font-weight: 500;
         line-height: .95;
         margin-bottom: 60px;
@@ -159,35 +190,32 @@ const ArticleStyled = Styled.article`
         font-size: 1.15rem;
         line-height: 1.7;
         color: #3b3b3b;
-
         margin-bottom: 20px;
     }
 
-    @media (max-width:900px){
-      width: 100%;
-    }   
-`
+    @media (max-width: 900px){
+        width: 100%;
+    }
+`;
 
 const SectionStyled = Styled.section`
-    //border: 1px solid blue;
-    flex: 1;
+    width: 50%;
+    margin: 0;
 
-    @media (max-width:900px){
-      width: 100%;
-    } 
-`
+    @media (max-width: 900px){
+        width: 100%;
+    }
+`;
 
 const FormStyled = Styled.form`
-
     display: flex;
     flex-direction: column;
     gap: 20px;
-
     padding: 0 30px;
 
-    @media (max-width:900px){
-      padding: 0;
-    } 
+    @media (max-width: 900px){
+        padding: 0;
+    }
 
     div{
         display: flex;
@@ -196,14 +224,15 @@ const FormStyled = Styled.form`
 
         label{
             font-size: 1.1rem;
-            font-weight: 600;        
+            font-weight: 600;
         }
 
-        input, textarea{
-            padding: 10px; 
+        input,
+        textarea{
+            padding: 10px;
 
             &::placeholder{
-                 color: rgb(161, 161, 161);  
+                color: rgb(161, 161, 161);
             }
         }
     }
@@ -212,7 +241,6 @@ const FormStyled = Styled.form`
         background: #111;
         color: #fff;
         border: none;
-        //padding: 10px 20px;
         width: 200px;
         padding: 15px 0;
         font-size: 1rem;
@@ -227,4 +255,4 @@ const FormStyled = Styled.form`
         opacity: .5;
         cursor: not-allowed;
     }
-`
+`;

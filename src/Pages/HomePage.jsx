@@ -1,5 +1,5 @@
 import Styled from "styled-components";
-import homeImage from "../assets/home-4.png";
+import homeImage from "../assets/home.png";
 import { useState } from "react";
 
 export default function HomePage() {
@@ -28,9 +28,6 @@ export default function HomePage() {
 
             <ImgContainerStyled>
                 <picture>
-                   {/*<source media="(max-width: 600px)" srcSet={image1Small} />
-                    <source media="(max-width: 1100px)" srcSet={image1Medium} />
-                    <img src={image1Large} alt="Arthur Works featured illustration" />*/}
                     <img src={homeImage} alt="Arthur Works featured illustration" />
                 </picture>
             </ImgContainerStyled>
